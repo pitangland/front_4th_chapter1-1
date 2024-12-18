@@ -97,6 +97,11 @@ const ProfilePage = () => {
     // document.getElementById("email").value = updateUser.email;
     // document.getElementById("bio").value = updateUser.bio;
   });
+
+  // saveUser를 한 이후에 세팅해주기
+  document.getElementById("username").value = user.username;
+  document.getElementById("email").value = user.email;
+  document.getElementById("bio").value = user.bio;
 };
 
 export default ProfilePage;
