@@ -1,6 +1,6 @@
-import { router } from "./route";
+import { router } from "./route.js";
 import "./store/index.js";
-import { removeUser } from "./store";
+import { removeUser } from "./store/index.js";
 import Header from "./components/Header.js";
 import Footer from "./components/Footer.js";
 
