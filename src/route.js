@@ -1,8 +1,11 @@
-import * as Pages from "./pages";
+import MainPage from "./pages/MainPage";
+import LoginPage from "./pages/LoginPage";
+import ProfilePage from "./pages/ProfilePage";
+import ErrorPage from "./pages/ErrorPage";
 
 export const router = {
-  "/": () => Pages.MainPage(),
-  "/login": () => Pages.LoginPage(),
-  "/profile": () => Pages.ProfilePage(),
-  "/404": () => Pages.ErrorPage(),
+  "/": () => MainPage(),
+  "/login": () => LoginPage(),
+  "/profile": () => ProfilePage(),
+  "/404": () => ErrorPage(),
 };
