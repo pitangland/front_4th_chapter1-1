@@ -26,7 +26,7 @@ const ProfilePage = () => {
             type="text"
             id="username"
             name="username"
-            value=${user.username}
+            value=${user.username || ""}
             class="w-full p-2 border rounded"
           />
         </div>
@@ -40,6 +40,7 @@ const ProfilePage = () => {
             type="email"
             id="email"
             name="email"
+            value=${user.email || ""}
             class="w-full p-2 border rounded"
           />
         </div>
@@ -79,6 +80,7 @@ const ProfilePage = () => {
 
   //프로필 업데이트
   const profileForm = document.getElementById("profile-form");
+
   profileForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const username = document.getElementById("username").value;
@@ -86,12 +88,14 @@ const ProfilePage = () => {
     const bio = document.getElementById("bio").value;
 
     const updateUser = { ...user, username, email, bio };
+
+    console.log(updateUser);
     saveUser(updateUser);
 
     //saveUser를 한 이후에 세팅해주기
-    document.getElementById("username").value = updateUser.username;
-    document.getElementById("email").value = updateUser.email;
-    document.getElementById("bio").value = updateUser.bio;
+    // document.getElementById("username").value = updateUser.username;
+    // document.getElementById("email").value = updateUser.email;
+    // document.getElementById("bio").value = updateUser.bio;
   });
 };
 
