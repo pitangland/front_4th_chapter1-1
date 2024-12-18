@@ -26,7 +26,7 @@ const ProfilePage = () => {
             type="text"
             id="username"
             name="username"
-            value=${getUser().username}
+            value=${user.username}
             class="w-full p-2 border rounded"
           />
         </div>
@@ -40,7 +40,6 @@ const ProfilePage = () => {
             type="email"
             id="email"
             name="email"
-            value=${getUser().email || ""}
             class="w-full p-2 border rounded"
           />
         </div>
@@ -55,7 +54,7 @@ const ProfilePage = () => {
             name="bio"
             rows="4"
             class="w-full p-2 border rounded"
-          >${getUser().bio || ""}</textarea>
+          >${user.bio || ""}</textarea>
         </div>
         <button
           type="submit"
@@ -88,6 +87,11 @@ const ProfilePage = () => {
 
     const updateUser = { ...user, username, email, bio };
     saveUser(updateUser);
+
+    //saveUser를 한 이후에 세팅해주기
+    document.getElementById("username").value = updateUser.username;
+    document.getElementById("email").value = updateUser.email;
+    document.getElementById("bio").value = updateUser.bio;
   });
 };
 
