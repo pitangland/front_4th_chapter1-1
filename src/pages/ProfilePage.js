@@ -26,7 +26,7 @@ const ProfilePage = () => {
             type="text"
             id="username"
             name="username"
-            value=${user.username || ""}
+            value="${user.username || ""}"
             class="w-full p-2 border rounded"
           />
         </div>
@@ -40,7 +40,7 @@ const ProfilePage = () => {
             type="email"
             id="email"
             name="email"
-            value=${user.email || ""}
+            value="${user.email || ""}"
             class="w-full p-2 border rounded"
           />
         </div>
@@ -89,19 +89,8 @@ const ProfilePage = () => {
 
     const updateUser = { ...user, username, email, bio };
 
-    console.log(updateUser);
     saveUser(updateUser);
-
-    //saveUser를 한 이후에 세팅해주기
-    // document.getElementById("username").value = updateUser.username;
-    // document.getElementById("email").value = updateUser.email;
-    // document.getElementById("bio").value = updateUser.bio;
   });
-
-  // saveUser를 한 이후에 세팅해주기
-  document.getElementById("username").value = user.username;
-  document.getElementById("email").value = user.email;
-  document.getElementById("bio").value = user.bio;
 };
 
 export default ProfilePage;
