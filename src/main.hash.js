@@ -1,6 +1,7 @@
 import "./main.js";
 
-import { router } from "./route.js";
+/*
+import { hashRouter } from "./route.js";
 import "./store/index.js";
 import { removeUser } from "./store/index.js";
 import Header from "./components/Header.js";
@@ -9,7 +10,8 @@ import Footer from "./components/Footer.js";
 // 페이지 렌더링 함수
 function render(path) {
   const root = document.getElementById("root");
-  const page = router[path] || router["/404"];
+  console.log("main.hash : " + path);
+  const page = hashRouter[path] || hashRouter["/404"];
   if (path === "/" || path === "/profile") {
     root.innerHTML = `<div class="bg-gray-100 min-h-screen flex justify-center">
       <div class="max-w-md w-full">
@@ -38,7 +40,7 @@ function render(path) {
 
 // 해시를 기반으로 경로를 반환하는 함수
 function getCurrentPath() {
-  return window.location.hash.slice(1) || "/"; // 해시(#) 제거하고 경로 반환, 기본값 "/"
+  return window.location.hash.slice(1); // 해시(#) 제거하고 경로 반환, 기본값 "/"
 }
 
 // 해시 변경 처리 함수
@@ -54,3 +56,4 @@ window.addEventListener("hashchange", () => render(getCurrentPath()));
 document.addEventListener("DOMContentLoaded", () => {
   render(getCurrentPath());
 });
+*/
