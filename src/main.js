@@ -43,6 +43,23 @@ function render() {
   }
 }
 
+// 이벤트 위임 추가 (logout만 고려하고 있었어서 수정)
+function bindGlobalNavigation() {
+  const nav = document.getElementById("topBar"); // 네비게이션 바의 부모 엘리먼트
+  if (nav) {
+    nav.addEventListener("click", (e) => {
+      const target = e.target;
+      if (target.tagName === "A" && target.classList.contains("nav-link")) {
+        e.preventDefault(); // 기본 동작 방지
+        const path = target.getAttribute("href"); // A 태그의 href 값 가져오기
+
+        if (target.id === "logout") removeUser();
+        navigate(path); // navigate를 통해 경로 변경 및 렌더링
+      }
+    });
+  }
+}
+
 /*
 // history API URL 변경 처리
 export function navigate(path) {
